@@ -3,6 +3,7 @@ const CURRENT_NUMBER_ID = "current-number";
 const NEW_NUMBER_BUTTON_ID = "new-number-button";
 const RECENT_NUMBERS_ID = "recent-numbers";
 const CALLED_NUMBERS_ID = "called-numbers";
+const RESET_GAME_BUTTON_ID = "reset-game-button";
 
 let called_numbers = [];
 let recent_numbers = [];
@@ -109,9 +110,38 @@ function showBingoNumber() {
 
 }
 
-let button = document.getElementById(NEW_NUMBER_BUTTON_ID);
-if (button != null) {
-    button.onclick = showBingoNumber;
+function displayStartGame(currentNumberId) {
+    let currentNumberDisplay = document.getElementById(currentNumberId);
+    if (currentNumberDisplay != null) {
+        currentNumberDisplay.innerText = "Game Ready to Start";
+    }
+    else {
+        console.log("Cannot find ID to display number");
+    }
+
+}
+
+function resetGame() {
+    called_numbers = [];
+    displayRecentNumbers(CALLED_NUMBERS_ID, called_numbers);
+
+    recent_numbers = []
+    displayRecentNumbers(RECENT_NUMBERS_ID, recent_numbers);
+
+    displayStartGame(CURRENT_NUMBER_ID);
+}
+
+let generateNumberButton = document.getElementById(NEW_NUMBER_BUTTON_ID);
+if (generateNumberButton != null) {
+    generateNumberButton.onclick = showBingoNumber;
+}
+else {
+    console.log("Cannot find ID to active button");
+}
+
+let resetButton = document.getElementById(RESET_GAME_BUTTON_ID);
+if (resetButton != null) {
+    resetButton.onclick = resetGame;
 }
 else {
     console.log("Cannot find ID to active button");
