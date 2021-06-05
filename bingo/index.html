@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>YemowtRonoc Github Pages</title>
+</head>
+
+<body>
+    <div class="d-grid gap-3">
+        <div class="container border-bottom border-secondary">
+            <h1 class="text-center">Bingo!</h1>
+        </div>
+
+
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-sm-auto p-3 border border-primary">
+
+                    <h5>Current Number: </h5>
+                </div>
+                <div class="col-sm-auto p-3 border border-primary">
+                    <p id="current-number">No number pulled yet.</p>
+                </div>
+
+            </div>
+
+            <div class="row justify-content-md-center">
+                <div class="d-flex p-3 justify-content-center border-bottom border-secondary">
+                    <button class="btn btn-primary" id="new-number-button">New Number</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-sm-auto p-3 border border-primary">
+                    <h5>Recent Numbers: </h5>
+                    <p id="recent-numbers"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-sm-auto p-3 border border-primary">
+                    <h5>All called numbers: </h5>
+                    <p id="called-numbers"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="number_generation.js"></script>
+
+    <!-- Main Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+        crossorigin="anonymous"></script>
+</body>
+
+
+
+
+
+</html>
