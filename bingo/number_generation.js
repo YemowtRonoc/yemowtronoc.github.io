@@ -75,24 +75,15 @@ function displayGameOver(currentNumberId) {
     }
 }
 
-function displayCalledNumbers(calledNumbersId, called_numbers) {
-    let calledNumbersDisplay = document.getElementById(calledNumbersId);
-    if (calledNumbersDisplay) {
-        calledNumbersDisplay.innerText = called_numbers.join(", ");
+function displayNumberList(elementId, numberList) {
+    let numberDisplay = document.getElementById(elementId);
+    if (numberDisplay) {
+        numberDisplay.innerText = numberList.join(", ");
     }
     else {
-        console.log("Cannot find ID to display called numbers");
+        console.log("Cannot find ID to display list of numbers");
     }
-}
 
-function displayRecentNumbers(recentNumbersId, recent_numbers) {
-    let recentNumbersDisplay = document.getElementById(recentNumbersId);
-    if (recentNumbersDisplay != null) {
-        recentNumbersDisplay.innerText = recent_numbers.join(", ");
-    }
-    else {
-        console.log("Cannot find ID to display recently called numbers");
-    }
 }
 
 function showBingoNumber() {
@@ -104,8 +95,8 @@ function showBingoNumber() {
         displayGameOver(CURRENT_NUMBER_ID);
     }
 
-    displayCalledNumbers(CALLED_NUMBERS_ID, called_numbers);
-    displayRecentNumbers(RECENT_NUMBERS_ID, recent_numbers);
+    displayNumberList(CALLED_NUMBERS_ID, called_numbers);
+    displayNumberList(RECENT_NUMBERS_ID, recent_numbers);
 
 
 }
@@ -123,10 +114,10 @@ function displayStartGame(currentNumberId) {
 
 function resetGame() {
     called_numbers = [];
-    displayRecentNumbers(CALLED_NUMBERS_ID, called_numbers);
+    displayNumberList(CALLED_NUMBERS_ID, called_numbers);
 
     recent_numbers = []
-    displayRecentNumbers(RECENT_NUMBERS_ID, recent_numbers);
+    displayNumberList(RECENT_NUMBERS_ID, recent_numbers);
 
     displayStartGame(CURRENT_NUMBER_ID);
 }
